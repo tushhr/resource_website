@@ -15,10 +15,18 @@ class Home extends Component {
             </div>
             <div className="row">
               <div className="col-12">
-                <h4>Select your ear.</h4>
+                <h4>Select your year.</h4>
               </div>
             </div>
-            <div className="row row-content">
+
+            {/*Year Windows*/}
+            <div className="year">
+              <Semester year={1} />
+              <Semester year={2} />
+              <Semester year={3} />
+              <Semester year={4} />
+            </div>
+            {/*<div className="row row-content">
               <div className="col-lg-6 col-12">
                 <Semester year={1} />
               </div>
@@ -33,7 +41,7 @@ class Home extends Component {
               <div className="col-lg-6 col-12">
                 <Semester year={4} />
               </div>
-            </div>
+            </div>*/}
           </div>
           <div className="col-lg-6 col-12">
             <div className="row row-image">
