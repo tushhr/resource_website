@@ -21,55 +21,33 @@ function NavBar(props){
             <NavbarBrand className="brand" href="/home">
               IIITDMJ PORTAL
             </NavbarBrand>
-            <NavItem>
-              <button className="but">
-                <span className="fa fa-search"></span> Search
-              </button>
-            </NavItem>
-            <div className="or">|</div>
-            <NavItem>
-              <Link className="nav-link br" to="/aboutus">
-                <span className="fa fa-info"></span> About
-              </Link>
-            </NavItem>
           </Nav>
           <Nav className="ml-auto" navbar>
-            {props.user ? 
-                (
-                  <React.Fragment>
-                    <NavItem>
-                      <Link className="nav-link br" to="/user">
-                        <span className="fa fa-user-circle-o"></span>{" "}
-                        {props.user.name}
-                      </Link>
-                    </NavItem>
-                    <div className="or">|</div>
-                    <NavItem>
-                      <button className="but" onClick={props.onLogOut}>
-                        <span className="fa fa-sign-out"></span> Sign-out
-                      </button>
-                    </NavItem>
-                  </React.Fragment>
-                )
-              :
-                (
-                  <React.Fragment>
-                    <NavItem>
-                      <button onClick={props.onClose} className="but">
-                        Log in
-                      </button>
-                    </NavItem>
-                    <NavItem>
-                      <button
-                        onClick={props.onRegister}
-                        className="btn btn-info"
-                      >
-                        Sign up
-                      </button>
-                    </NavItem>
-                  </React.Fragment>
-                )
-            }
+            {!props.users && (
+              <React.Fragment>
+                  <button onClick={props.onClose} className="secButton">
+                    Log in
+                  </button>
+                  <button
+                    onClick={props.onRegister}
+                    className="priButton"
+                  >
+                    Sign up
+                  </button>
+              </React.Fragment>
+            )}
+            {props.users && (
+              <React.Fragment>
+                  <Link className="nav-link br" to="/user">
+                    <span className="fa fa-user-circle-o"></span>{" "}
+                    {props.users.name}
+                  </Link>
+                <div className="or">|</div>
+                  <button className="secButton" onClick={props.onLogOut}>
+                    <span className="fa fa-sign-out"></span> Sign-out
+                  </button>
+              </React.Fragment>
+            )}
           </Nav>
         </Navbar>
         {/* login part */}
