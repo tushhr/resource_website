@@ -10,12 +10,12 @@ class Home extends Component {
           <div className="col-lg-6 col-12">
             <div className="row">
               <div className="col-12">
-                <h1>Semester resources at your finger tips</h1>
+                <p className="heading">Semester resources at your finger tips</p>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
-                <h4>Select your year.</h4>
+                <p className="subheading">Select your year.</p>
               </div>
             </div>
 
@@ -52,15 +52,15 @@ class Home extends Component {
                   alt="study_image"
                 />
               </div>
-            </div>
+            </div>{/*
             <div className="row row-text">
               <div className="col">
                 <h4 className="">
-                  Class notes,PYQ,Assignments,Practical Lab
+                  DetailsClass notes,PYQ,Assignments,Practical Lab
                   Manuals,Syllabus,Course book pdf and much more....
                 </h4>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
