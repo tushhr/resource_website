@@ -14,7 +14,7 @@ import "./App.css";
 function App(){
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
-  const [user, setUser] = useState(null);
+  const [users, setUser] = useState();
 
   useEffect(() => {
        try {
@@ -33,6 +33,7 @@ function App(){
         localStorage.setItem("token", jwt);
         const user = jwtDecode(jwt);
         setIsModalOpen(!isModalOpen);
+        console.log(user);
         setUser(user);
       } 
       catch (ex) {
@@ -78,7 +79,7 @@ function App(){
       <React.Fragment>
         <ToastContainer />
         <NavBar
-          user={user}
+          user={users}
           onLogin={handleLogin}
           onRegister={handleRegister}
           isModal={isModalOpen}
